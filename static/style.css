@@ -1,0 +1,92 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 20px;
+    background-image: url('./Fondo3.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.20); /* Cambia el último valor (0.5) para ajustar la opacidad */
+}
+
+
+/* Encabezado */
+.header {
+    text-align: center;
+    padding: 20px;
+}
+
+.header img {
+    max-width: 20%;
+    border-radius: 50%;
+}
+
+.header h1 {
+    color: #333;
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.header p {
+    color: #666;
+    font-size: 16px;
+}
+
+/* Descripción */   
+.description p {
+    color: #3b3737;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Aptitudes */
+/* Aptitudes */
+.skills-container {
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 100px;
+    margin-bottom: 800px;
+}
+
+.skills-title {
+    margin-bottom: 20px; /* Agregar margen inferior para separar del contenedor de habilidades */
+}
+
+
+/* Aptitudes */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre las habilidades */
+}
+
+.skill {
+    flex: 1 1 300px; /* Para que los elementos tengan un ancho mínimo */
+    background-color: rgba(249, 249, 249, 0.8);
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px; /* Espacio vertical entre las habilidades */
+}
+
+.skill h3 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+
+/* Para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .skills {
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr)); /* Cambiar a una sola columna */
+    }
+}
