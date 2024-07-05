@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-AkL7zDop1no2zXj27HYunWyu9JC75MCq0R8dkXG15xjRz8a4RWeAehcX2Ivr2Feyi7Mgsls5C7aMG2PcmGlxAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Inicio</a></li>
+            <li><a href="{{ url_for('aptitudes') }}">Aptitudes</a></li>
+            <li><a href="{{ url_for('projectos') }}">Proyecto</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="header">
+            <img src="static/Foto perfil 2.jpg" alt="Imagen de presentación">
+            <h1>Kevin Fabian Vargas Rodriguez</h1>
+            <p>Data Analyst</p>
+        </div>
+        <div class="description">
+            <p>Con una sólida formación y un enfoque especializado en el análisis de datos, he dedicado mi trayectoria educativa y profesional a adquirir un conocimiento profundo en este campo. Mis esfuerzos se han concentrado en participar en cursos, diplomados y actualmente en la carrera de Ingeniería de Sistemas, donde encuentro un terreno fértil para cultivar mi pasión por el análisis de datos. Esta área no solo me apasiona, sino que también encuentro un profundo disfrute al sumergirme en su estudio y aplicación práctica</p>
+        </div>
+        <div class="certificates">
+            <h2>Certificados</h2>
+            <br>
+            <div class="certificate-gallery">
+                <img src="static/Jupyter_notebook.png" alt="Certificado 1">
+                <img src="static/objetos bidimencionales.png" alt="Certificado 2">
+                <img src="static/python.png" alt="Certificado 3">
+                <img src="static/Certificado1.png" alt="Certificado 4">
+                <img src="static/Certificado2.png" alt="Certificado 5">
+                <img src="static/Certificado3.png" alt="Certificado 6">
+                <img src="static/Certificado4.png" alt="Certificado 7">
+                <img src="static/Certificado5.png" alt="Certificado 8">
+                <img src="static/Certificado6.png" alt="Certificado 9">
+                <img src="static/Certificado7.png" alt="Certificado 10">
+                <!-- Añade más imágenes según sea necesario -->
+            </div>
+        </div>
+
+    </div>
+    <div class="contacto">
+        <h2>Contacto</h2>
+        <ul>
+            <li><a href="https://www.linkedin.com/in/kevin-vargas-50b49a219" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+            <li><a href="https://wa.me/3138359141" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+            <li><a href="vfabian238@outlook.com"><i class="far fa-envelope"></i> Correo Electrónico</a></li>
+
+           
+        </ul>
+
+    </div>
+</body>
+</html>

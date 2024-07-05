@@ -1,54 +1,108 @@
 /* Estilos generales */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #000;
 }
 
+main {
+    width: 100%;
+}
+
+nav {
+    background-color: #1f1a1a; /* Color de fondo */
+    padding: 30px 0; /* Espaciado interior */
+}
+
+nav ul {
+    list-style-type: none; /* Quita los estilos de lista */
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Centra los elementos */
+}
+
+nav ul li {
+    display: inline; /* Muestra los elementos en línea */
+    margin-right: 20px; /* Espaciado entre elementos */
+}
+
+nav ul li a {
+    color: #fff; /* Color del texto */
+    text-decoration: none; /* Quita la subrayado del enlace */
+    padding: 10px; /* Espaciado interior */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+nav ul li a:hover {
+    background-color: #555; /* Cambia el color de fondo al pasar el mouse */
+    border-radius: 5px; /* Agrega esquinas redondeadas */
+
+}
+
+nav ul li a::after {
+    content: " <> ";
+}
 /* Contenedor principal */
 .container {
     max-width: 1100px;
     margin: 30px auto;
     padding: 20px;
-    background-image: url('./Fondo3.jpg');
+    background-image: url('./Fondo11.jpg');
+    
     background-size: cover;
     background-position: center;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.20); /* Cambia el último valor (0.5) para ajustar la opacidad */
+    box-shadow: 0 0 20px rgb(49, 49, 49); /* Cambia el último valor (0.5) para ajustar la opacidad */
 }
-
 
 /* Encabezado */
 .header {
     text-align: center;
-    padding: 20px;
+    padding: 40px 20px; /* Aumentar el espaciado alrededor del encabezado */
 }
 
 .header img {
-    max-width: 20%;
+    max-width: 25%; /* Aumentar el tamaño de la imagen del perfil */
     border-radius: 50%;
+    margin-bottom: 20px; /* Añadir espacio debajo de la imagen */
 }
 
 .header h1 {
-    color: #333;
-    font-size: 24px;
-    margin: 10px 0;
+    color: #f5f3f3;
+    font-size: 32px; /* Aumentar el tamaño del encabezado */
+    margin: 20px 0; /* Aumentar el espacio entre el encabezado y el párrafo */
 }
 
 .header p {
-    color: #666;
-    font-size: 16px;
+    color: #fcfbfb;
+    font-size: 18px; /* Aumentar el tamaño del texto */
+    margin-bottom: 20px; /* Añadir espacio debajo del párrafo */
 }
 
-/* Descripción */   
+/* Descripción */
+.description {
+    padding: 0 20px; /* Aumentar el espaciado alrededor del párrafo */
+}
+
+
+
 .description p {
-    color: #3b3737;
-    font-size: 16px;
-    line-height: 1.6;
+    color: #fdf3f3;
+    font-size: 15px; /* Aumentar el tamaño del texto */
+    line-height: 1.8; /* Aumentar el espacio entre líneas */
+    text-align: center;
+    margin-right: 25%;
+    margin-left: 25%;
 }
 
-/* Aptitudes */
+.skills-title {
+    color: #fdf3f3;
+    text-align: center;
+}
+
+
 /* Aptitudes */
 .skills-container {
     padding: 20px;
@@ -59,10 +113,9 @@ body {
 
 .skills-title {
     margin-bottom: 20px; /* Agregar margen inferior para separar del contenedor de habilidades */
+    
 }
 
-
-/* Aptitudes */
 .skills {
     display: flex;
     flex-wrap: wrap;
@@ -81,12 +134,102 @@ body {
     color: #333;
     font-size: 18px;
     margin-bottom: 10px;
+    text-align: center;
 }
-
 
 /* Para pantallas más pequeñas */
 @media (max-width: 768px) {
     .skills {
         grid-template-columns: repeat(auto-fit, minmax(100%, 1fr)); /* Cambiar a una sola columna */
+    }
+}
+
+.contacto {
+    background-color: #1f1a1a; /* Color de fondo */
+    padding: 20px; /* Espaciado interior */
+    border-radius: 10px; /* Borde redondeado */
+}
+
+.contacto h2 {
+    color: #f1f0f0; /* Color del texto */
+}
+
+.contacto ul {
+    list-style-type: none; /* Quita los estilos de lista */
+    padding: 0;
+}
+
+.contacto ul li {
+    display: inline-block; /* Muestra los elementos en línea */
+    margin-right: 20px; /* Espaciado entre elementos */
+}
+
+.contacto ul li a {
+    color: #fff; /* Color del texto */
+    text-decoration: none; /* Quita el subrayado del enlace */
+    padding: 5px 10px; /* Espaciado interior */
+    border: 1px solid #fff; /* Borde sólido blanco */
+    border-radius: 5px; /* Borde redondeado */
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.contacto ul li a:hover {
+    background-color: #A7A7A7; /* Cambia el color de fondo al pasar el mouse */
+}
+
+.certificates {
+    margin-top: 40px;
+    text-align: center;
+    background-color: #1f1a1a; /* Cambia este color al que desees */
+    
+    padding: 20px; /* Ajusta el espaciado interior según sea necesario */
+    border-radius: 10px; /* Borde redondeado */
+   
+
+}
+.board {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2px;
+    width: 600px;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.5); /* Preto com transparência */
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Borda semi-transparente */
+    backdrop-filter: blur(5px); /* Desfoque de fundo */
+}
+
+
+
+.certificates h2 {
+    color: #e4d5d5;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.certificate-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.certificate-gallery img {
+    width: 220px;
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.certificate-gallery img:hover {
+    transform: scale(1.70);
+}
+
+/* Para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .certificate-gallery img {
+        width: 100%;
     }
 }

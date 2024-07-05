@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Inicio</a></li>
+            <li><a href="{{ url_for('aptitudes') }}">Aptitudes</a></li>
+            <li><a href="{{ url_for('projectos') }}">Proyecto</a></li>
+            
+        
+            
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="header">
+            
+            <h1>Kevin Fabian Vargas Rodriguez</h1>
+            <p>Data Analyst</p>
+        </div>
+        <div class="description">
+            <p>¡Hola! Soy Kevin Fabian Vargas Rodriguez, un apasionado por el data analyst con más de dos años de experiencia en la industria de BPO. Mi enfoque se centra en la gestión de datos, desde la minería hasta la visualización. A continuación, te presento mis aptitudes y algunos de mis proyectos destacados.</p>
+        </div>
+        
+            <h2 class="skills-title">Aptitudes</h2>
+        <div class="skills">
+            <div class="skill">
+                <h3>Minería de Datos</h3>
+                <p>Extracción y análisis de datos para obtener información valiosa. Uso de herramientas como Excel y Python.</p>
+            </div>
+            <div class="skill">
+                <h3>Visualización de Datos</h3>
+                <p>Creación de gráficos y visualizaciones significativas. Conocimiento de PowerBI para representar datos de manera efectiva.</p>
+            </div>
+        </div>
+        <div class="skills">
+            <div class="skill">
+                <h3>Bases de Datos</h3>
+                <p>Trabajo con bases de datos como MySQL, PostgreSQL y SQL Server. Diseño de esquemas, consultas y optimización.</p>
+                <br>
+                <br>
+            </div>
+            
+            <div class="skill">
+                <h3>Programación en Python</h3>
+                <p>Desarrollo de scripts y aplicaciones utilizando Python. Automatización de tareas y procesos.</p>
+            </div>
+            <div class="skill">
+                <h3>Inteligencia Empresarial</h3>
+                <p>Participación en proyectos estratégicos. Contribución al análisis y toma de decisiones.</p>
+            </div>
+        </div>
+        <div class="projects">
+            <h2>Proyectos Destacados</h2>
+            <div class="project">
+                <h3>Proyecto 1: Sistema de Gestión de Ventas</h3>
+                <p>Desarrollo de una aplicación web para registrar y gestionar ventas. Tecnologías utilizadas: Python, Flask, SQLite.</p>
+            </div>
+            <!-- Agrega más proyectos aquí -->
+        </div>
+    </div>
+</body>
+</html>
