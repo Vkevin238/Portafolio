@@ -1,5 +1,11 @@
 /* Estilos generales */
 
+* {
+    box-sizing: border-box;
+
+    margin: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -8,8 +14,9 @@ body {
 }
 
 main {
-    width: 100%;
+    margin-bottom: 20px;
 }
+
 
 nav {
     background-color: #1f1a1a; /* Color de fondo */
@@ -97,52 +104,78 @@ nav ul li a::after {
     margin-left: 25%;
 }
 
-.skills-title {
-    color: #fdf3f3;
-    text-align: center;
+/* En tu archivo styles.css */
+
+/* Estilos generales */
+/* Estilos para las fechas */
+/* Estilos para la cinta de cine */
+.film-reel {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    padding-left: 5%;
 }
 
-
-/* Aptitudes */
-.skills-container {
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 100px;
-    margin-bottom: 800px;
-}
-
-.skills-title {
-    margin-bottom: 20px; /* Agregar margen inferior para separar del contenedor de habilidades */
-    
-}
-
-.skills {
+.film-strip {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px; /* Espacio entre las habilidades */
+    width: 100%;
+    animation: scrollFilm 20s linear infinite;
 }
 
 .skill {
-    flex: 1 1 300px; /* Para que los elementos tengan un ancho mínimo */
-    background-color: rgba(249, 249, 249, 0.8);
-    padding: 15px;
+    flex: 0 0 300px;
+    margin-right: 10px;
+    background-color: #fff;
+    border: 5px solid #ddd;
+    padding: 10px;
     border-radius: 5px;
-    margin-bottom: 20px; /* Espacio vertical entre las habilidades */
 }
 
-.skill h3 {
-    color: #333;
-    font-size: 18px;
-    margin-bottom: 10px;
-    text-align: center;
+.skill img{
+    padding-top: 10%;
+    padding-left: 10%;
+    width: 80px;
+    
 }
 
-/* Para pantallas más pequeñas */
-@media (max-width: 768px) {
-    .skills {
-        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr)); /* Cambiar a una sola columna */
+/* Estilos para las fechas */
+.date {
+    font-size: 12px;
+    color: #888;    
+    display: block;
+    margin-top: 5px;
+}
+
+/* Estilos para los botones de navegación */
+#prev-button,
+#next-button {
+    background-color: #0074d9;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#prev-button:hover,
+#next-button:hover {
+    background-color: #0056b3;
+}
+
+/* Animación para el carrusel */
+@keyframes scrollFilm {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
     }
 }
+
+
+
+
 
 .contacto {
     background-color: #1f1a1a; /* Color de fondo */
@@ -233,3 +266,4 @@ nav ul li a::after {
         width: 100%;
     }
 }
+
