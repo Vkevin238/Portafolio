@@ -228,7 +228,7 @@ nav ul li a::after {
 }
 
 .certificate-gallery img:hover {
-    transform: scale(1.70);
+    transform: scale(1.30);
 }
 
 /* Media Queries para dispositivos móviles */
