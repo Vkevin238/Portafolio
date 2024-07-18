@@ -3,108 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="icon" type="image/png" href="static/faver.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-AkL7zDop1no2zXj27HYunWyu9JC75MCq0R8dkXG15xjRz8a4RWeAehcX2Ivr2Feyi7Mgsls5C7aMG2PcmGlxAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Kevin Fabian Vargas Rodriguez - Data Analyst</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="{{ url_for('aptitudes') }}">Aptitudes</a></li>
-                <li><a href="{{ url_for('projectos') }}">Proyecto</a></li>
-                
-            </ul>
-        </nav>
-    </header>
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#aptitudes">Aptitudes</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#certificados">Certificados</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <button id="darkModeToggle" class="dark-mode-toggle">
+            <i class="fas fa-moon"></i>
+        </button>
+    </nav>
+
     <main>
-        <div class="container">
-            <div class="header">
-                <img src="static\Foto perfil 2.jpg" alt="Imagen de presentación">
+        <section id="inicio" class="hero">
+            <div class="container">
+                <img src="static/Foto perfil 2.jpg" alt="Kevin Fabian Vargas Rodriguez" class="profile-img">
                 <h1>Kevin Fabian Vargas Rodriguez</h1>
-                <p>Data Analyst</p>
+                <p class="subtitle">Data Analyst</p>
+                <p class="description">
+                    ¡Hola! Soy Kevin Fabian Vargas Rodriguez, un apasionado por el data analysis con más de dos años de experiencia en la industria de BPO. Mi enfoque se centra en la gestión de datos, desde la minería hasta la visualización. A continuación, te presento mis aptitudes y algunos de mis proyectos destacados.
+                </p>
             </div>
-            <div id="string-main" class="description">
-                <p>¡Hola! Soy Kevin Fabian Vargas Rodriguez, un apasionado por el data analyst con más de dos años de experiencia en la industria de BPO. Mi enfoque se centra en la gestión de datos, desde la minería hasta la visualización. A continuación, te presento mis aptitudes y algunos de mis proyectos destacados.</p>
+        </section>
+
+        <section id="aptitudes" class="skills">
+            <div class="container">
+                <h2>Mis Aptitudes</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <i class="fas fa-database"></i>
+                        <h3>Minería de Datos</h3>
+                        <p>Extracción y análisis de datos para obtener información valiosa. Uso de herramientas como Excel y Python.</p>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-chart-bar"></i>
+                        <h3>Visualización de Datos</h3>
+                        <p>Creación de gráficos y visualizaciones significativas. Conocimiento de PowerBI para representar datos de manera efectiva.</p>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-server"></i>
+                        <h3>Bases de Datos</h3>
+                        <p>Trabajo con bases de datos como MySQL, PostgreSQL y SQL Server. Diseño de esquemas, consultas y optimización.</p>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="75"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-code"></i>
+                        <h3>Programación en Python</h3>
+                        <p>Desarrollo de scripts y aplicaciones utilizando Python. Automatización de tareas y procesos.</p>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="70"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Inteligencia Empresarial</h3>
+                        <p>Participación en proyectos estratégicos. Contribución al análisis y toma de decisiones.</p>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="80"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="film-reel">
-            <div class="film-strip">
-                <div class="skill">
-                    <h3>Minería de Datos</h3>
-                    <p>Extracción y análisis de datos para obtener información valiosa. Uso de herramientas como Excel y Python.</p>
-                    <img src="static/excel.ico" alt="">
-                    <img src="static/python.ico" alt="">
-                </div>
-
-                <div class="skill">
-                    <h3>Visualización de Datos</h3>
-                    <p>Creación de gráficos y visualizaciones significativas. Conocimiento de PowerBI para representar datos de manera efectiva.</p>
-                    <img src="static/bi.ico" alt="">
-                    <img src="static/excel.ico" alt="">
-                </div>
-
-                <div class="skill">
-                    <h3>Bases de Datos</h3>
-                    <p>Trabajo con bases de datos como MySQL, PostgreSQL y SQL Server. Diseño de esquemas, consultas y optimización.</p>
-                    <img src="static/mysql.ico" alt="">
-                    <img src="static/sql.ico" alt="">
-                    <img src="static/postgresql.ico" alt="">
-                </div>
-
-                <div class="skill">
-                    <h3>Programación en Python</h3>
-                    <p>Desarrollo de scripts y aplicaciones utilizando Python. Automatización de tareas y procesos.</p>
-                    <img src="static/python.ico" alt="">
-                    <img src="static/pandas.ico" alt="">
-                    <img src="static/numpy.ico" alt="">
-                </div>
-
-                <div class="skill">
-                    <h3>Inteligencia Empresarial</h3>
-                    <p>Participación en proyectos estratégicos. Contribución al análisis y toma de decisiones.</p>
-                    <img src="static/empresa.ico" alt="">
+        <section id="proyectos" class="projects">
+            <div class="container">
+                <h2>Proyectos Destacados</h2>
+                <div class="project-grid">
+                    <div class="project-card" data-project="1">
+                        <img src="path/to/project1-image.jpg" alt="Proyecto 1">
+                        <h3>Análisis de Ventas</h3>
+                    </div>
+                    <div class="project-card" data-project="2">
+                        <img src="path/to/project2-image.jpg" alt="Proyecto 2">
+                        <h3>Predicción de Demanda</h3>
+                    </div>
+                    <div class="project-card" data-project="3">
+                        <img src="path/to/project3-image.jpg" alt="Proyecto 3">
+                        <h3>Dashboard de KPIs</h3>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-
-        <div class="certificates">
-            <h2>Certificados</h2>
-            <br>
-            <div class="certificate-gallery">
-                <img src="static/Jupyter_notebook.png" alt="Certificado 1">
-                <img src="static/objetos bidimencionales.png" alt="Certificado 2">
-                <img src="static/python.png" alt="Certificado 3">
-                <img src="static/Certificado1.png" alt="Certificado 4">
-                <img src="static/Certificado2.png" alt="Certificado 5">
-                <img src="static/Certificado3.png" alt="Certificado 6">
-                <img src="static/Certificado4.png" alt="Certificado 7">
-                <img src="static/Certificado5.png" alt="Certificado 8">
-                <img src="static/Certificado6.png" alt="Certificado 9">
-                <img src="static/Certificado7.png" alt="Certificado 10">
-                <!-- Añade más imágenes según sea necesario -->
+        <section id="certificados" class="certificates">
+            <div class="container">
+                <h2>Certificados</h2>
+                <div class="certificate-gallery">
+                    <img src="static/Jupyter_notebook.png" alt="Certificado 1">
+                    <img src="static/objetos bidimencionales.png" alt="Certificado 2">
+                    <img src="static/python.png" alt="Certificado 3">
+                    <img src="static/Certificado1.png" alt="Certificado 4">
+                    <img src="static/Certificado2.png" alt="Certificado 5">
+                    <img src="static/Certificado3.png" alt="Certificado 6">
+                    <img src="static/Certificado4.png" alt="Certificado 7">
+                    <img src="static/Certificado5.png" alt="Certificado 8">
+                    <img src="static/Certificado6.png" alt="Certificado 9">
+                    <img src="static/Certificado7.png" alt="Certificado 10">
+                </div>
             </div>
-        </div>
-    </main>    
+        </section>
+
+        <section id="contacto" class="contact">
+            <div class="container">
+                <h2>Contacto</h2>
+                <form id="contactForm" class="contact-form">
+                    <input type="text" name="name" placeholder="Nombre" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <textarea name="message" placeholder="Mensaje" required></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+                <div id="formStatus"></div>
+                <div class="contact-links">
+                    <a href="https://www.linkedin.com/in/kevin-vargas-50b49a219" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://wa.me/3138359141" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    <a href="mailto:vfabian238@outlook.com"><i class="fas fa-envelope"></i> Correo Electrónico</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <footer>
-        <div class="contacto">
-            <h2>Contacto</h2>
-            <br>
-            <br>
-            <ul>
-                <li><a href="https://www.linkedin.com/in/kevin-vargas-50b49a219" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-                <li><a href="https://wa.me/3138359141" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
-                <li><a href="mailto:correo@example.com"><i class="far fa-envelope"></i> Correo Electrónico</a></li>
-
-            
-            </ul>
+        <div class="container">
+            <p>&copy; 2024 Kevin Fabian Vargas Rodriguez. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <button id="scrollToTop" class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <img id="modalImage" src="" alt="Project Image">
+            <p id="modalDescription"></p>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
 </body>
 </html>
