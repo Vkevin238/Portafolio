@@ -19,13 +19,19 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 
-    // Modo oscuro
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    darkModeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        const icon = darkModeToggle.querySelector('i');
-        icon.classList.toggle('fa-moon');
-        icon.classList.toggle('fa-sun');
+    // Menú móvil
+    const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
+    const mobileMenu = document.querySelector('.mobile-menu');
+
+    mobileMenuIcon.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+    });
+
+    // Cerrar menú móvil al hacer clic en un enlace
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
     });
 
     // Animación de barras de habilidades
@@ -57,11 +63,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const projectData = {
         1: {
-            title: 'Proyecto 1',
+            title: 'Análisis de Ventas',
             image: 'path/to/project1-image.jpg',
-            description: 'Descripción detallada del Proyecto 1.'
+            description: 'Descripción detallada del proyecto de Análisis de Ventas.'
         },
-        // Añade más proyectos aquí
+        2: {
+            title: 'Predicción de Demanda',
+            image: 'path/to/project2-image.jpg',
+            description: 'Descripción detallada del proyecto de Predicción de Demanda.'
+        },
+        3: {
+            title: 'Dashboard de KPIs',
+            image: 'path/to/project3-image.jpg',
+            description: 'Descripción detallada del proyecto de Dashboard de KPIs.'
+        }
     };
 
     projectCards.forEach(card => {
@@ -101,9 +116,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', () => {
         if (window.pageYOffset > 300) {
-            scrollToTopButton.style.display = 'block';
+            scrollToTopButton.classList.add('show');
         } else {
-            scrollToTopButton.style.display = 'none';
+            scrollToTopButton.classList.remove('show');
         }
     });
 
@@ -111,6 +126,16 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
+        });
+    });
+
+    // Desplazamiento suave para enlaces internos
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
         });
     });
 });
