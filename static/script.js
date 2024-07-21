@@ -19,19 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 
-    // Menú móvil
-    const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
-    const mobileMenu = document.querySelector('.mobile-menu');
-
-    mobileMenuIcon.addEventListener('click', () => {
-        mobileMenu.classList.toggle('active');
-    });
-
-    // Cerrar menú móvil al hacer clic en un enlace
-    document.querySelectorAll('.mobile-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-        });
+    // Modo oscuro
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    darkModeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        const icon = darkModeToggle.querySelector('i');
+        icon.classList.toggle('fa-moon');
+        icon.classList.toggle('fa-sun');
     });
 
     // Animación de barras de habilidades
@@ -63,20 +57,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const projectData = {
         1: {
-            title: 'Análisis de Ventas',
+            title: 'Proyecto 1',
             image: 'path/to/project1-image.jpg',
-            description: 'Descripción detallada del proyecto de Análisis de Ventas.'
+            description: 'Descripción detallada del Proyecto 1.'
         },
-        2: {
-            title: 'Predicción de Demanda',
-            image: 'path/to/project2-image.jpg',
-            description: 'Descripción detallada del proyecto de Predicción de Demanda.'
-        },
-        3: {
-            title: 'Dashboard de KPIs',
-            image: 'path/to/project3-image.jpg',
-            description: 'Descripción detallada del proyecto de Dashboard de KPIs.'
-        }
+        // Añade más proyectos aquí
     };
 
     projectCards.forEach(card => {
@@ -116,9 +101,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', () => {
         if (window.pageYOffset > 300) {
-            scrollToTopButton.classList.add('show');
+            scrollToTopButton.style.display = 'block';
         } else {
-            scrollToTopButton.classList.remove('show');
+            scrollToTopButton.style.display = 'none';
         }
     });
 
@@ -129,13 +114,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Desplazamiento suave para enlaces internos
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+    // Navegación móvil
+    const navToggle = document.createElement('button');
+    navToggle.innerHTML = '&#9776;'; // Icono de hamburguesa
+    navToggle.classList.add('nav-toggle');
+    document.querySelector('nav').prepend(navToggle);
+
+    const navList = document.querySelector('nav ul');
+    navToggle.addEventListener('click', () => {
+        navList.classList.toggle('show');
+    });
+
+    // Cerrar menú al hacer clic en un enlace
+    navList.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navList.classList.remove('show');
         });
     });
+
+    // Ajuste de altura en dispositivos móviles
+    function setMobileHeight() {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+
+    setMobileHeight();
+    window.addEventListener('resize', setMobileHeight);
+
+    // Desactivar zoom en inputs en iOS
+    const metas = document.getElementsByTagName('meta');
+    for (let i = 0; i < metas.length; i++) {
+        if (metas[i].name === "viewport") {
+            metas[i].content = "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0";
+        }
+    }
 });

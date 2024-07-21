@@ -11,11 +11,9 @@ body {
     color: #333;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     transition: background-color 0.3s ease, color 0.3s ease;
-    font-size: 16px;
 }
 
 .container {
-    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
@@ -366,66 +364,133 @@ body.dark-mode footer {
 /* Botón de volver arriba */
 .scroll-to-top {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 20px;
+    right: 20px;
     background-color: #3498db;
     color: #fff;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
     cursor: pointer;
-    display: none;
-    transition: background-color 0.3s ease;
+    opacity: 0;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
 }
 
 .scroll-to-top:hover {
     background-color: #2980b9;
 }
 
-/* Estilos para dispositivos móviles */
+.scroll-to-top.show {
+    opacity: 1;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Estilos para el toggle de navegación en móviles */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Media queries para responsive */
 @media (max-width: 768px) {
-    nav {
-        background-color: rgba(52, 152, 219, 0.9);
-        backdrop-filter: blur(10px);
+    .container {
+        padding: 0 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .nav-toggle {
+        display: block;
     }
 
     nav ul {
         display: none;
     }
 
-    .mobile-menu-icon {
-        display: block;
-        font-size: 24px;
-        color: #fff;
-        cursor: pointer;
-    }
-
-    .mobile-menu {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(52, 152, 219, 0.95);
-        z-index: 1000;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .mobile-menu.active {
+    nav ul.show {
         display: flex;
     }
 
-    .mobile-menu a {
-        color: #fff;
-        font-size: 24px;
-        margin: 20px 0;
-        transition: transform 0.3s ease;
+    .hero {
+        padding: 60px 0;
     }
 
-    .mobile-menu a:hover {
-        transform: scale(1.1);
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .subtitle {
+        font-size: 1.2em;
+    }
+
+    .skills-grid,
+    .project-grid,
+    .certificate-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-card, .project-card {
+        padding: 20px;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 5% auto;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-links a {
+        margin: 10px 0;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 16px; /* Previene el zoom automático en iOS */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 30px 0;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .subtitle {
+        font-size: 1em;
     }
 }
