@@ -398,8 +398,21 @@ body.dark-mode footer {
     animation: fadeIn 0.5s ease forwards;
 }
 
-/* Responsive */
+/* Estilos para el toggle de navegación en móviles */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Media queries para responsive */
 @media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
     nav ul {
         flex-direction: column;
         align-items: center;
@@ -409,14 +422,43 @@ body.dark-mode footer {
         margin: 10px 0;
     }
 
+    .nav-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
     .hero {
         padding: 60px 0;
+    }
+
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .subtitle {
+        font-size: 1.2em;
     }
 
     .skills-grid,
     .project-grid,
     .certificate-gallery {
         grid-template-columns: 1fr;
+    }
+
+    .skill-card, .project-card {
+        padding: 20px;
     }
 
     .modal-content {
@@ -431,5 +473,24 @@ body.dark-mode footer {
 
     .contact-links a {
         margin: 10px 0;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 16px; /* Previene el zoom automático en iOS */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 30px 0;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .subtitle {
+        font-size: 1em;
     }
 }

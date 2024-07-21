@@ -113,4 +113,39 @@ document.addEventListener('DOMContentLoaded', () => {
             behavior: 'smooth'
         });
     });
+
+    // Navegación móvil
+    const navToggle = document.createElement('button');
+    navToggle.innerHTML = '&#9776;'; // Icono de hamburguesa
+    navToggle.classList.add('nav-toggle');
+    document.querySelector('nav').prepend(navToggle);
+
+    const navList = document.querySelector('nav ul');
+    navToggle.addEventListener('click', () => {
+        navList.classList.toggle('show');
+    });
+
+    // Cerrar menú al hacer clic en un enlace
+    navList.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navList.classList.remove('show');
+        });
+    });
+
+    // Ajuste de altura en dispositivos móviles
+    function setMobileHeight() {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+
+    setMobileHeight();
+    window.addEventListener('resize', setMobileHeight);
+
+    // Desactivar zoom en inputs en iOS
+    const metas = document.getElementsByTagName('meta');
+    for (let i = 0; i < metas.length; i++) {
+        if (metas[i].name === "viewport") {
+            metas[i].content = "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0";
+        }
+    }
 });
