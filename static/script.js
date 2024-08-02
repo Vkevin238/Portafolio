@@ -52,14 +52,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('projectModal');
     const closeModal = document.querySelector('.close');
     const modalTitle = document.getElementById('modalTitle');
-    const modalImage = document.getElementById('modalImage');
     const modalDescription = document.getElementById('modalDescription');
 
     const projectData = {
         1: {
             title: 'Proyecto 1',
-            image: 'path/to/project1-image.jpg',
-            description: 'Descripción detallada del Proyecto 1.'
+        
+            description: 'Descripción detallada del Proyecto 1.',
+            pdf: './static/informe primer proyecto.pdf'
+        },
+
+        2: {
+            title: 'Proyecto 2',
+            description: 'Descripción detallada del Proyecto 1.',
+            pdf: './static/CSAT.pdf'
+        },
+
+        3: {
+            title: 'Proyecto 3',
+            description: 'Descripción detallada del Proyecto 1.',
+            pdf: './static/CSAT_DASBOARD.pdf'
         },
         // Añade más proyectos aquí
     };
@@ -69,8 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const projectId = card.getAttribute('data-project');
             const project = projectData[projectId];
             modalTitle.textContent = project.title;
-            modalImage.src = project.image;
             modalDescription.textContent = project.description;
+            modalPDF.src = project.pdf;
             modal.style.display = 'block';
         });
     });
