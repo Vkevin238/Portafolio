@@ -56,21 +56,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const projectData = {
         1: {
-            title: 'Proyecto 1',
+            title: 'Análisis de Ventas',
         
-            description: 'Descripción detallada del Proyecto 1.',
+            description: 'El proyecto consiste en analizar y presentar datos de compras realizadas por clientes en una empresa, utilizando herramientas de visualización como Power BI. Se enfoca en identificar patrones de compra, como los clientes con mayores valores de compra y la distribución de compras por diferentes categorías y métodos de pago, para apoyar la toma de decisión.',
             pdf: './static/informe primer proyecto.pdf'
         },
 
         2: {
-            title: 'Proyecto 2',
-            description: 'Descripción detallada del Proyecto 1.',
+            title: 'Analisis de encuentas',
+            description: 'En el documento que estás estudiando, se analiza el rendimiento de los vehículos autónomos de Waymo en términos de satisfacción del cliente (CSAT) a través de diferentes canales de comunicación. Se presentan métricas relacionadas con la satisfacción y la insatisfacción, destacando el porcentaje de CSAT y DCSAT por semana y canal, lo que ayuda a identificar tendencias y áreas de mejora en la experiencia del usuario con los servicios de Waymo.(CSAT).',
             pdf: './static/CSAT.pdf'
         },
 
         3: {
-            title: 'Proyecto 3',
-            description: 'Descripción detallada del Proyecto 1.',
+            title: 'Dashboard de CSAT',
+            description: 'En el documento que estás estudiando, se analiza el rendimiento de los vehículos autónomos de Waymo en términos de satisfacción del cliente (CSAT) a través de diferentes canales de comunicación. Se presentan métricas relacionadas con la satisfacción y la insatisfacción, destacando el porcentaje de CSAT y DCSAT por semana y canal, lo que ayuda a identificar tendencias y áreas de mejora en la experiencia del usuario con los servicios de Waymo.(CSAT).',
             pdf: './static/CSAT_DASBOARD.pdf'
         },
         // Añade más proyectos aquí
