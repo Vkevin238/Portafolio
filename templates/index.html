@@ -126,26 +126,7 @@
                     <button type="submit">Enviar</button>
                 </form>
             </div>
-        </section>   
-        <script>
-            document.getElementById('contactForm').addEventListener('submit', function(event) {
-                event.preventDefault(); // Evita que el formulario se envíe de la manera tradicional
-            
-                var formData = new FormData(this);
-            
-                fetch('/contact', {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.status === 'success') {
-                        alert(data.message); // Muestra la alerta con el mensaje recibido
-                    }
-                })
-                .catch(error => console.error('Error:', error));
-            });
-            </script>     
+        </section>    
     </main>
 
     <footer>

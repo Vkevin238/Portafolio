@@ -38,11 +38,11 @@ def contact():
         ''', (name, email, message))
         conn.commit()
     
-    return jsonify({"status": "success", "message": "Gracias por tu mensaje. Nos pondremos en contacto contigo pronto."})
+    return redirect('/thankyou')
 
 @app.route('/thankyou')
 def thank_you():
-    return "Gracias por tu mensaje. Nos pondremos en contacto contigo pronto."
+    return render_template('gracias.html')
 
 
 def init_db():
