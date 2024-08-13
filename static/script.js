@@ -73,6 +73,12 @@ document.addEventListener('DOMContentLoaded', () => {
             description: 'En el documento que estás estudiando, se analiza el rendimiento de los vehículos autónomos de Waymo en términos de satisfacción del cliente (CSAT) a través de diferentes canales de comunicación. Se presentan métricas relacionadas con la satisfacción y la insatisfacción, destacando el porcentaje de CSAT y DCSAT por semana y canal, lo que ayuda a identificar tendencias y áreas de mejora en la experiencia del usuario con los servicios de Waymo.(CSAT).',
             pdf: './static/CSAT_DASBOARD.pdf'
         },
+
+        4: {
+            title: 'Uso de API Spotify',
+            description: 'Este código utiliza la biblioteca spotipy para obtener información sobre el artista "Penyair" desde la API de Spotify. Extrae el nombre del artista, sus canciones populares y los álbumes asociados, y organiza esta información en un DataFrame de pandas. Luego, conecta a una base de datos MySQL e inserta los datos del DataFrame en una tabla llamada artistas',
+            pdf: 'https://nbviewer.org/github/Vkevin238/Portafolio-kevin/blob/main/static/spotify.ipynb'
+        },
         // Añade más proyectos aquí
     };
 
