@@ -98,15 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Formulario de contacto
-    const contactForm = document.getElementById('contactForm');
-    const formStatus = document.getElementById('formStatus');
-
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        // Aquí iría la lógica para enviar el formulario, por ejemplo usando fetch()
-        formStatus.textContent = '¡Mensaje enviado con éxito!';
-        contactForm.reset();
-    });
+ 
 
     // Botón Volver Arriba
     const scrollToTopButton = document.getElementById('scrollToTop');

@@ -119,20 +119,33 @@
         <section id="contacto" class="contact">
             <div class="container">
                 <h2>Contacto</h2>
-                <form id="contactForm" class="contact-form">
+                <form id="contactForm" class="contact-form" action="/contact" method="POST">
                     <input type="text" name="name" placeholder="Nombre" required>
                     <input type="email" name="email" placeholder="Email" required>
                     <textarea name="message" placeholder="Mensaje" required></textarea>
                     <button type="submit">Enviar</button>
                 </form>
-                <div id="formStatus"></div>
-                <div class="contact-links">
-                    <a href="https://www.linkedin.com/in/kevin-vargas-50b49a219" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://wa.me/3138359141" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                    <a href="mailto:vfabian238@outlook.com"><i class="far fa-envelope"></i></a>
-                </div>
             </div>
-        </section>
+        </section>   
+        <script>
+            document.getElementById('contactForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Evita que el formulario se envíe de la manera tradicional
+            
+                var formData = new FormData(this);
+            
+                fetch('/contact', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        alert(data.message); // Muestra la alerta con el mensaje recibido
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+            });
+            </script>     
     </main>
 
     <footer>
