@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         4: {
             title: 'Uso de API Spotify',
             description: 'Este código utiliza la biblioteca spotipy para obtener información sobre el artista "Penyair" desde la API de Spotify. Extrae el nombre del artista, sus canciones populares y los álbumes asociados, y organiza esta información en un DataFrame de pandas. Luego, conecta a una base de datos MySQL e inserta los datos del DataFrame en una tabla llamada artistas',
-            pdf: 'https://nbviewer.org/github/Vkevin238/Portafolio-kevin/blob/main/static/spotify.ipynb'
+            pdf: 'https://nbviewer.org/github/Vkevin238/Portafolio-kevin/blob/main/static/spotify2.ipynb'
         },
         // Añade más proyectos aquí
     };
